@@ -8,43 +8,39 @@ public class BusinessServiceTest {
     BusinessService service;
     int salariu;
     int percent;
-
     @BeforeEach
     public void setUp() {
         service = new BusinessService();
-        int salariu = 100;//definesti si datele de intrare
-        int percent = 15;
+        salariu = 100;
+        percent = 15;
     }
     @Test
     public void testCalculeazaTaxeSalariu() {
-//1 crearea contextului de testare
-
-
-        //2. cand? invocarea metodei de test folosit in contextul de la pasul 1
+        // 1 GIVEN
+        // creare context de testare
+        // 2 WHEN
+        // invocare metoda de test
+        // se va folosi contextul de invocare construit la pasul 1
+        // + capturare rezultat
         double result = service.calculeazaTaxeSalariu(salariu, percent);
-        // sa invoc un obiect si sa-i dau parametri - important testezi o metoda intr-o clasa
-
-        //3. validare rezultat
-        Assertions.assertEquals(15, result);// validezi rezultatul
-        //foloseste framework de Assertions - multiple optiuni de testare
-
+        // 3 THEN
+        // validare rezultat
+        Assertions.assertEquals(15, result);
     }
     @Test
     public void testCalculeazaTaxeSalariuException() {
-//1 crearea contextului de testare
+        // 1 GIVEN
+        // creare context de testare
         salariu = -100;
-
-        //2. cand? invocarea metodei de test folosit in contextul de la pasul 1
+        // 2 WHEN
+        // invocare metoda de test
+        // se va folosi contextul de invocare construit la pasul 1
+        // + capturare rezultat
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             service.calculeazaTaxeSalariu(salariu, percent);
         });
-
-        // sa invoc un obiect si sa-i dau parametri - important testezi o metoda intr-o clasa
-
-        //3. validare rezultat
-
-        //foloseste framework de Assertions - multiple optiuni de testare
-
+        // 3 THEN
+        // validare rezultat
+//        Assertions.assertEquals(15, result);
     }
-
 }
