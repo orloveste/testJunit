@@ -14,5 +14,6 @@ public class BusinessService {
         if (persoane == 4 && salariu < 1000) return 20;
         if (persoane >= 5 && salariu < 1000) return 30;
         return 0;
+
     }
 }
