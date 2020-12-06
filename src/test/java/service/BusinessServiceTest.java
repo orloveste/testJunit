@@ -3,6 +3,8 @@ package service;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.time.Duration;
 
@@ -49,7 +51,8 @@ public class BusinessServiceTest {
 //        Assertions.assertEquals(15, result);
     }
 
-    @Test
+    @ParameterizedTest
+    @CsvFileSource(resources = {"/test_data.csv"}, numLinesToSkip = 1)
     public void testCalculeazaDeduceri() {
         //1
 
