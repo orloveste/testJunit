@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
+
 public class BusinessServiceTest {
     BusinessService service;
     int salariu;
@@ -26,6 +28,9 @@ public class BusinessServiceTest {
         // 3 THEN
         // validare rezultat
         Assertions.assertEquals(15, result);
+        Assertions.assertTimeout(Duration.ofSeconds(5), () -> {
+            //pass
+        });
     }
     @Test
     public void testCalculeazaTaxeSalariuException() {
