@@ -16,7 +16,7 @@ public class BusinessServiceTest {
         // sa invoc un obiect si sa-i dau parametri - important testezi o metoda intr-o clasa
 
         //3. validare rezultat
-        Assertions.assertEquals(15, result);// validezi rezultatul
+        Assertions.assertEquals(14, result);// validezi rezultatul
         //foloseste framework de Assertions - multiple optiuni de testare
 
     }
